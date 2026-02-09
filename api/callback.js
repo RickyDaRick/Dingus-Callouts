@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
     const user = await userRes.json();
     const encodedUser = encodeURIComponent(JSON.stringify(user));
-    res.redirect(`/?user=${encodedUser}`);
+    res.redirect(`/?user=${encodeURIComponent(JSON.stringify(user))}`);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server crash", details: err.message });
