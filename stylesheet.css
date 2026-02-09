@@ -8,7 +8,7 @@ img {
   user-select: none;
 }
 @font-face {
-  font-family: "RubikSprayPaint";
+  font-family: "hippo";
   src: url(fonts/hippo.woff);
 }
 #volumeSlider {
@@ -27,7 +27,7 @@ img {
 }
 html,
 body {
-  font-family: "RubikSprayPaint", Arial, sans-serif;
+  font-family: "hippo", Arial, sans-serif;
   color: rgb(243, 243, 243);
   margin: 0;
   padding: 0;
@@ -45,6 +45,18 @@ body {
   left: 50%;
   text-align: center;
   transform: translateX(-50%);
+  font-family: "hippo", Arial, sans-serif;
+  color: rgb(243, 243, 243);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 20px;
+  width: 50%;
+  text-shadow:
+    -2px -2px 0 hsl(30, 12%, 10%),
+    2px -2px 0 hsl(30, 12%, 10%),
+    -2px 2px 0 hsl(30, 12%, 10%),
+    2px 2px 0 hsl(30, 12%, 10%);
 }
 #discordAvatar {
   width: 50px;
