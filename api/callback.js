@@ -13,16 +13,13 @@ export default async function handler(req, res) {
         redirect_uri: process.env.DISCORD_REDIRECT_URI,
       }),
     });
-
     const tokenData = await tokenRes.json();
-
     if (!tokenData.access_token) {
       return res.status(400).send("Failed to get access token");
     }
     const userRes = await fetch("https://discord.com/api/users/@me", {
       headers: { Authorization: `Bearer ${tokenData.access_token}` },
     });
-
     const user = await userRes.json();
     const encodedUser = encodeURIComponent(JSON.stringify(user));
     res.writeHead(302, { Location: `/?user=${encodedUser}` });
