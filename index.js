@@ -84,12 +84,28 @@ disc.addEventListener("click", () => {
   window.location.href =
     "https://discord.com/oauth2/authorize?client_id=1470213618720047145&redirect_uri=https://dingus-callouts.vercel.app%2Fapi%2Fcallback&response_type=code&scope=identify";
 });
+(function populateUserInfo() {
+  const storedUser = localStorage.getItem("discordUser");
+  if (storedUser) {
+    const user = JSON.parse(storedUser);
+    username = user.username;
+    avatarHash = user.avatar;
+    userId = user.id;
+    avatarUrl = avatarHash
+      ? `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}.png`
+      : `https://cdn.discordapp.com/embed/avatars/${parseInt(user.discriminator) % 5}.png`;
+    document.getElementById("discordAvatar").src = avatarUrl;
+    document.getElementById("username").innerText = username;
+    localStorage.setItem("userId", userId);
+    localStorage.setItem("username", username);
+    localStorage.setItem("avatarUrl", avatarUrl);
+  }
+})();
 (function handleDiscordLogin() {
   const params = new URLSearchParams(window.location.search);
   const userData = params.get("user");
   if (userData) {
     const user = JSON.parse(decodeURIComponent(userData));
-    console.log("Discord user:", user);
     localStorage.setItem("discordUser", JSON.stringify(user));
     window.history.replaceState({}, document.title, "/");
     username = user.username;
@@ -100,27 +116,52 @@ disc.addEventListener("click", () => {
       : `https://cdn.discordapp.com/embed/avatars/${parseInt(user.discriminator) % 5}.png`;
     userIdGlobal = userId;
     document.getElementById("discordAvatar").src = avatarUrl;
+    document.getElementById("username").src = username;
+    localStorage.setItem("userId", userId);
+    localStorage.setItem("username", username);
+    localStorage.setItem("avatarUrl", avatarUrl);
   }
 })();
-let scores = JSON.parse(localStorage.getItem("scores")) || {
-  lab: 120,
-  bord: 120,
-  theme: 120,
-  bank: 120,
-  kafe: 120,
-  club: 120,
-  chal: 120,
-  fort: 120,
-  oreg: 120,
-  kanal: 120,
-  sky: 120,
-  outback: 120,
-  villa: 120,
-  lair: 120,
-  coast: 120,
-  cons: 120,
-  all: 120,
-};
+let allScores = JSON.parse(localStorage.getItem("scores")) || {};
+let scores = userId
+  ? allScores[userId] || {
+      lab: 120,
+      bord: 120,
+      theme: 120,
+      bank: 120,
+      kafe: 120,
+      club: 120,
+      chal: 120,
+      fort: 120,
+      oreg: 120,
+      kanal: 120,
+      sky: 120,
+      outback: 120,
+      villa: 120,
+      lair: 120,
+      coast: 120,
+      cons: 120,
+      all: 120,
+    }
+  : {
+      lab: 120,
+      bord: 120,
+      theme: 120,
+      bank: 120,
+      kafe: 120,
+      club: 120,
+      chal: 120,
+      fort: 120,
+      oreg: 120,
+      kanal: 120,
+      sky: 120,
+      outback: 120,
+      villa: 120,
+      lair: 120,
+      coast: 120,
+      cons: 120,
+      all: 120,
+    };
 
 let choose = false;
 window.addEventListener("resize", () => {

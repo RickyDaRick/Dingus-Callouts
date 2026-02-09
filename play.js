@@ -40,6 +40,9 @@ const blacklist = [
   "assembly head glitch",
   "kitchen",
 ];
+let userId = localStorage.getItem("userId");
+let username = localStorage.getItem("username");
+let avatarUrl = localStorage.getItem("avatarUrl");
 document.addEventListener("DOMContentLoaded", (e) => {
   function lerp(start, end, t) {
     return start + (end - start) * t;
@@ -131,11 +134,53 @@ document.addEventListener("DOMContentLoaded", (e) => {
   guessImg.addEventListener("transitionstart", (e) => {
     go.play();
   });
+  let allScores = JSON.parse(localStorage.getItem("scores")) || {};
+  let scores = userId
+    ? allScores[userId] || {
+        lab: 120,
+        bord: 120,
+        theme: 120,
+        bank: 120,
+        kafe: 120,
+        club: 120,
+        chal: 120,
+        fort: 120,
+        oreg: 120,
+        kanal: 120,
+        sky: 120,
+        outback: 120,
+        villa: 120,
+        lair: 120,
+        coast: 120,
+        cons: 120,
+        all: 120,
+      }
+    : {
+        lab: 120,
+        bord: 120,
+        theme: 120,
+        bank: 120,
+        kafe: 120,
+        club: 120,
+        chal: 120,
+        fort: 120,
+        oreg: 120,
+        kanal: 120,
+        sky: 120,
+        outback: 120,
+        villa: 120,
+        lair: 120,
+        coast: 120,
+        cons: 120,
+        all: 120,
+      };
+
   function saveScore(mode, time) {
     if (scores[mode] === null || time < scores[mode]) {
       scores[mode] = time;
-
-      localStorage.setItem("scores", JSON.stringify(scores));
+      if (!userId) return;
+      allScores[userId] = scores;
+      localStorage.setItem("scores", JSON.stringify(allScores));
     }
   }
   const params = new URLSearchParams(window.location.search);
