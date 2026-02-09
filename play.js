@@ -262,7 +262,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
       percentage.toFixed(2) +
       " seconds";
     if (percentage > 60) {
-      //lost
+      let area = document.getElementsByClassName("area");
+      for (var i = 0; i < area.length; i++) {
+        area[i].style.pointerEvents = "none";
+        area[i].readOnly = false;
+        area[i].style.transition = "opacity 1s ease";
+        area[i].style.opacity = "0";
+      }
     }
     if (arr.length === 0) {
       //win

@@ -245,6 +245,10 @@ bino.addEventListener("mousedown", () => {
 });
 
 const back = document.getElementById("back");
+const userico = document.getElementsByClassName("user");
+for (var i = 0; i < userico.length; i++) {
+  userico[i].style.opacity = "1";
+}
 back.style.opacity = "0";
 back.addEventListener("mouseenter", () => {
   if (back.style.opacity == "1") back.src = "images/backHover.png";
@@ -323,6 +327,9 @@ back.addEventListener("click", () => {
     goon.style.transform = "translate(100vw, 150%)";
     bino.style.transform = "translate(-100vw, 150%)";
     back.style.opacity = "0";
+    for (var i = 0; i < userico.length; i++) {
+      userico[i].style.opacity = "1";
+    }
   }
 });
 oreg.addEventListener("transitionend", handleSlam);
@@ -466,6 +473,9 @@ function animate() {
   if (play) {
     if (playList === "") {
       back.style.opacity = "1";
+      for (var i = 0; i < userico.length; i++) {
+        userico[i].style.opacity = "0";
+      }
       if (gamemode !== "none") {
         clas.style.transform = "translate(-100vw, -150%)";
         ari.style.transform = "translate(100vw, -150%)";
@@ -487,6 +497,9 @@ function animate() {
       }
     } else {
       back.style.opacity = "0";
+      for (var i = 0; i < userico.length; i++) {
+        userico[i].style.opacity = "0";
+      }
       music.volume *= 0.95;
     }
   }
