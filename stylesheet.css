@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+@font-face {
+  font-family: "RubikSprayPaint";
+  src: url(fonts/RubikSprayPaint-Regular.ttf);
+}
+#volumeSlider {
+  z-index: 200;
+  accent-color: #5f5548;
+  position: fixed;
+  top: 1px;
+  cursor: pointer;
+}
+.volume {
+  z-index: 200;
+  position: fixed;
+  left: 10px;
+  cursor: pointer;
+}
+html,
+body {
+  font-family: "RubikSprayPaint", Arial, sans-serif;
+  color: rgb(243, 243, 243);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  text-shadow:
+    -2px -2px 0 hsl(30, 12%, 10%),
+    2px -2px 0 hsl(30, 12%, 10%),
+    -2px 2px 0 hsl(30, 12%, 10%),
+    2px 2px 0 hsl(30, 12%, 10%);
+}
+.title {
+  text-align: center;
+}
+canvas {
+  background-color: bisque;
+}
+#logo {
+  position: relative;
+  top: 0;
+  transition: transform 4s ease;
+}
+#disc {
+  position: relative;
+  top: 0;
+  transition: transform 4s ease;
+  cursor: pointer;
+}
+#start {
+  position: relative;
+  top: 0;
+  transition: transform 4s ease;
+  cursor: pointer;
+}
+#clas,
+#ari,
+#goon,
+#bino {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+#bino {
+  transform: translate(-100vw, 150%);
+  transition: transform 0.5s ease-in;
+  will-change: transform;
+}
+#clas {
+  transform: translate(-100vw, -150%);
+  transition: transform 0.5s ease-in;
+  will-change: transform;
+}
+#ari {
+  transform: translate(100vw, -150%);
+  transition: transform 0.5s ease-in;
+  will-change: transform;
+}
+#goon {
+  transform: translate(100vw, 150%);
+  transition: transform 0.5s ease-in;
+  will-change: transform;
+}
+.mapBtns {
+  position: fixed;
+  top: 20%;
+  left: 0%;
+}
+#dotCanvas {
+  pointer-events: none;
+}
+#back {
+  opacity: 1;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}

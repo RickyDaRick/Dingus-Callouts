@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dingus Callouts - Classic</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="play.css" />
+  </head>
+  <body>
+    <canvas
+      id="dotCanvas"
+      style="position: fixed; top: 0; left: 0; z-index: -1"
+    ></canvas>
+    <div>
+      <div>
+        <img src="images/three.png" id="number" alt="number" width="1000px" />
+        <button type="button" id="skip">Skip</button>
+        <button type="button" id="report">Feedback/Report Issue</button>
+      </div>
+      <div>
+        <div id="left"></div>
+        <div id="timer">
+          <div id="timerFill"></div>
+        </div>
+        <br />
+        <img
+          src="images/lab/20260127143749_1.jpg"
+          id="guessImage"
+          alt="image"
+          width="1000px"
+          height="600px"
+        />
+        <br />
+        <form id="enter">
+          <input
+            type="text"
+            id="texter"
+            placeholder="type guess here"
+            required
+            maxlength="100"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </form>
+      </div>
+      <div id="tags">sample text</div>
+      <div id="overlay"></div>
+      <div id="reportModal">
+        <h2>Report | Suggest Tags</h2>
+        <p>
+          Is a callout missing or known by a different name? If so, please
+          provide the name and its quality.
+        </p>
+        <textarea placeholder="Hmmmmmm..." id="newTag"></textarea>
+        <br />
+        <br />
+        <br />
+        <div class="radioGroup">
+          <input type="radio" id="best" name="quality" value="best" />
+          <label for="best">-3.0</label>
+          <input type="radio" id="fine" name="quality" value="fine" checked />
+          <label for="fine">-0.5</label>
+          <input type="radio" id="bad" name="quality" value="bad" />
+          <label for="bad">+1.5</label>
+          <br />
+          <br />
+          <p>
+            Is there a bug or a game mechanic that isn’t functioning correctly?
+            If so, please describe it.
+          </p>
+          <textarea
+            placeholder="Describe the issue in great detail..."
+            id="issueReport"
+          ></textarea>
+          <br />
+          <br />
+          <button id="closeReport">submit</button>
+        </div>
+      </div>
+      <script src="play.js"></script>
+    </div>
+  </body>
+</html>
