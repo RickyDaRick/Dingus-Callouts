@@ -520,7 +520,6 @@ async function populateLeaderboard() {
 
   const res = await fetch("/api/leaderboard");
   const data = await res.json();
-
   data.sort((a, b) => a.time - b.time);
 
   data.forEach((entry) => {
