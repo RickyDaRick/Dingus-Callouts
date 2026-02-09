@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
   animate();
 });
-async function populatePublicLeaderboard() {
+async function populateLeaderboard() {
   const container = document.getElementById("leaderboardContainer");
   if (!container) return;
   container.innerHTML = "";
