@@ -75,6 +75,26 @@ start.addEventListener("click", () => {
   start.style.transform = "translateY(4000px)";
   disc.style.transform = "translateY(4000px)";
 });
+disc.addEventListener("click", () => {
+  click.play();
+  /*window.location.href =
+    "https://discord.com/oauth2/authorize?client_id=1470213618720047145&redirect_uri=https://dingus-callouts.vercel.app%2Fapi%2Fcallback&response_type=code&scope=identify";*/
+});
+
+async function getUser(code) {
+  const res = await fetch(`/api/callback?code=${code}`);
+  const user = await res.json();
+  return user;
+}
+
+// After login redirect
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+if (code) {
+  const user = await getUser(code);
+  console.log(user); // { id, username, discriminator, avatar }
+}
+
 let choose = false;
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;

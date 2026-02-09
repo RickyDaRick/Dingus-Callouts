@@ -214,6 +214,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
     if (arr.length === 0) {
       //win
+      /*  async function submitTime(user, time) {
+  await fetch("/api/leaderboard", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: user.id, username: user.username, time }),
+  });
+
+  const res = await fetch("/api/leaderboard");
+  const data = await res.json();
+  console.log(data.leaderboard);
+} */
     }
   }
   texter.addEventListener("keydown", (e) => {
