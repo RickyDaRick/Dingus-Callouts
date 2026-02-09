@@ -1,23 +1,20 @@
 export default async function handler(req, res) {
   try {
     const code = req.query.code;
-
     if (!code) {
       return res.status(400).json({ error: "No code provided" });
     }
-
-    // Exchange code for token
     const tokenRes = await fetch("https://discord.com/api/oauth2/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
+        client_id: process.env.DISCORD_CLIENT_ID,
+        client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: "authorization_code",
         code: code,
-        redirect_uri: process.env.REDIRECT_URI,
+        redirect_uri: process.env.DISCORD_REDIRECT_URI,
       }),
     });
 
@@ -26,16 +23,12 @@ export default async function handler(req, res) {
     if (!tokenData.access_token) {
       return res.status(500).json(tokenData);
     }
-
-    // Get user info
     const userRes = await fetch("https://discord.com/api/users/@me", {
       headers: {
         Authorization: `Bearer ${tokenData.access_token}`,
       },
     });
-
     const user = await userRes.json();
-
     res.status(200).json(user);
   } catch (err) {
     console.error(err);
