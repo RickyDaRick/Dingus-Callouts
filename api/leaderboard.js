@@ -6,6 +6,10 @@ export default async function handler(req, res) {
     const repoName = "Dingus-Callouts";
     const path = "leaderboard.json";
     const token = process.env.GITHUB_TOKEN;
+
+    if (!token) {
+      return res.status(500).json({ error: "Missing GITHUB_TOKEN" });
+    }
     if (req.method === "GET") {
       const getRes = await fetch(
         `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`,
@@ -14,7 +18,17 @@ export default async function handler(req, res) {
         },
       );
 
+      if (!getRes.ok) {
+        const text = await getRes.text();
+        console.error("GitHub GET error:", text);
+        return res.status(500).json({ error: "Failed to fetch leaderboard" });
+      }
+
       const fileData = await getRes.json();
+
+      if (!fileData.content) {
+        return res.status(200).json([]);
+      }
 
       const content = JSON.parse(
         Buffer.from(fileData.content, "base64").toString(),
@@ -28,7 +42,6 @@ export default async function handler(req, res) {
       if (!mode || time === undefined) {
         return res.status(400).json({ error: "Missing score data" });
       }
-
       const getRes = await fetch(
         `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`,
         {
@@ -36,14 +49,23 @@ export default async function handler(req, res) {
         },
       );
 
+      if (!getRes.ok) {
+        const text = await getRes.text();
+        console.error("GitHub GET error:", text);
+        return res.status(500).json({ error: "Failed to fetch leaderboard" });
+      }
+
       const fileData = await getRes.json();
 
       const sha = fileData.sha;
 
-      const content = JSON.parse(
-        Buffer.from(fileData.content, "base64").toString(),
-      );
+      let content = [];
 
+      if (fileData.content) {
+        content = JSON.parse(
+          Buffer.from(fileData.content, "base64").toString(),
+        );
+      }
       const existingIndex = content.findIndex(
         (e) => e.userId === userId && e.mode === mode,
       );
@@ -54,8 +76,13 @@ export default async function handler(req, res) {
 
       if (existingIndex >= 0) content.splice(existingIndex, 1);
 
-      content.push({ userId, username, avatarUrl, mode, time });
-
+      content.push({
+        userId: userId || "guest",
+        username: username || "Guest",
+        avatarUrl: avatarUrl || null,
+        mode,
+        time,
+      });
       const putRes = await fetch(
         `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`,
         {
@@ -74,6 +101,12 @@ export default async function handler(req, res) {
         },
       );
 
+      if (!putRes.ok) {
+        const text = await putRes.text();
+        console.error("GitHub PUT error:", text);
+        return res.status(500).json({ error: "Failed to update leaderboard" });
+      }
+
       const data = await putRes.json();
 
       return res.status(200).json(data);
@@ -81,7 +114,7 @@ export default async function handler(req, res) {
 
     return res.status(405).json({ error: "Method not allowed" });
   } catch (err) {
-    console.error(err);
+    console.error("Leaderboard crash:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
 }
