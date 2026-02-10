@@ -222,10 +222,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, username, avatarUrl, mode, time }),
       });
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("Server returned an error:", text);
+        return;
+      }
+
       const data = await res.json();
       console.log("Leaderboard update:", data);
     } catch (e) {
-      console.error(e);
+      console.error("Fetch failed:", e);
     }
   }
   const params = new URLSearchParams(window.location.search);
