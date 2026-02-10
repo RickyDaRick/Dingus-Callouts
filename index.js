@@ -29,7 +29,7 @@ const click = new Audio("audio/click.wav");
 const music = new Audio("audio/Nando Wando - Super Proto.wav");
 let map;
 playList = "";
-volumeSlider.value = localStorage.getItem("volume");
+volumeSlider.value = localStorage.getItem("volume") || 0.5;
 click.volume = localStorage.getItem("volume");
 music.volume = localStorage.getItem("volume");
 play = false;

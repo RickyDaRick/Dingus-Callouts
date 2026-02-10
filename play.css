@@ -235,6 +235,9 @@ h1 {
     3px -3px 0 #5831a1,
     -3px 3px 0 #5831a1,
     3px 3px 0 #5831a1;
+  user-select: all;
+  pointer-events: all;
+  z-index: 300;
 }
 #guessImage.show {
   transform: translateY(15%);
