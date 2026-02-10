@@ -416,7 +416,7 @@ textarea {
     -4px 4px 0 #5831a1,
     4px 4px 0 #5831a1;
   position: fixed;
-  top: 25px;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   width: 125%;
