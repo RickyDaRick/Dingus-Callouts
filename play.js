@@ -502,26 +502,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     overlay.classList.add("show");
     modal.classList.add("show");
   });
-
-  closeReport.addEventListener("click", () => {
-    click.play();
-    let body =
-      document.getElementById("newTag").value +
-      "|" +
-      document.querySelector('input[name="quality"]:checked').value +
-      "|" +
-      document.getElementById("issueReport").value +
-      "|" +
-      arr[current];
-    console.log(body);
-    //send email here
-    document.getElementById("fine").checked = true;
-    document.getElementById("newTag").value = "";
-    document.getElementById("issueReport").value = "";
-    overlay.classList.remove("show");
-    modal.classList.remove("show");
-  });
-
   overlay.addEventListener("click", closeModal);
 
   function closeModal() {
@@ -610,3 +590,28 @@ async function populateLeaderboard() {
     }
   });
 }
+closeReport.addEventListener("click", async () => {
+  let body = {
+    tag: document.getElementById("newTag").value,
+    quality: document.querySelector('input[name="quality"]:checked').value,
+    issue: document.getElementById("issueReport").value,
+    callout: arr[current],
+  };
+
+  try {
+    const res = await fetch("/api/report", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    console.log("Report sent:", data);
+  } catch (e) {
+    console.error("Failed to send report:", e);
+  }
+  document.getElementById("fine").checked = true;
+  document.getElementById("newTag").value = "";
+  document.getElementById("issueReport").value = "";
+  overlay.classList.remove("show");
+  modal.classList.remove("show");
+});
