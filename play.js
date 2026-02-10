@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
   bar.style.width = "0px";
   function tick() {
-    if (percentage > 60) {
+    if (percentage > 120) {
       if (!populate) {
         let area = document.getElementsByClassName("area");
         for (var i = 0; i < area.length; i++) {

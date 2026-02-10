@@ -415,7 +415,7 @@ textarea {
     4px -4px 0 #5831a1,
     -4px 4px 0 #5831a1,
     4px 4px 0 #5831a1;
-  position: absolute;
+  position: fixed;
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
