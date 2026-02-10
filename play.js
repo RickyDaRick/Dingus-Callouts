@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   guessImg.addEventListener("transitionstart", (e) => {
     go.play();
   });
+  let scoreSubmitted = false;
   let populate = false;
   let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
   let allScores = JSON.parse(localStorage.getItem("scores")) || {};
@@ -327,8 +328,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
       }
     }
     if (arr.length === 0) {
-      saveScore(map.substring(5, map.length - 4), percentage);
-      savePublicScore(map.substring(5, map.length - 4), percentage);
+      if (arr.length === 0 && !scoreSubmitted) {
+        const gameMode = map.substring(5, map.length - 4);
+        saveScore(gameMode, percentage);
+        savePublicScore(gameMode, percentage);
+        scoreSubmitted = true;
+      }
     }
   }
   texter.addEventListener("keydown", (e) => {
