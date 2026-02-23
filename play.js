@@ -556,7 +556,6 @@ async function populateLeaderboard() {
   const res = await fetch("/api/leaderboard");
   const data = await res.json();
   const currentMode = map.substring(5, map.length - 4);
-
   const filtered = data
     .filter((entry) => entry.mode === currentMode)
     .sort((a, b) => a.time - b.time);
