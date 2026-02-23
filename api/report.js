@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const filePath = `reports/report-${timestamp}.txt`;
 
   const content = `
-Username: ${username}
+Callout: ${username}
 Map: ${map}
 Quality: ${quality}
 Issue: ${issue}
@@ -24,7 +24,6 @@ Timestamp: ${new Date().toISOString()}
     content: Buffer.from(content).toString("base64"),
     branch: "main",
   };
-
   try {
     const token = process.env.GITHUB_REPORTER;
 
