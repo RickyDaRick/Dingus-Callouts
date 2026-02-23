@@ -124,7 +124,7 @@ canvas {
   padding: 7rem 3rem 3rem 3rem;
   justify-content: center;
   align-content: start;
-  overflow: auto;
+  overflow: hidden;
   scrollbar-width: auto;
   scrollbar-color: bisque #796c5c;
 }
