@@ -1,5 +1,0 @@
-Username: gh
-Map: /images/lab/20260127144425_1.jpg,storage
-Quality: best
-Issue: dfsdg
-Timestamp: 2026-02-23T23:29:10.590Z
