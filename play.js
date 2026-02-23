@@ -591,24 +591,24 @@ async function populateLeaderboard() {
   });
 }
 closeReport.addEventListener("click", async () => {
-  let body = {
-    tag: document.getElementById("newTag").value,
+  const body = {
+    username: document.getElementById("newTag").value || "Anonymous",
     quality: document.querySelector('input[name="quality"]:checked').value,
-    issue: document.getElementById("issueReport").value,
-    callout: arr[current],
+    issue: document.getElementById("issueReport").value || "No details",
+    map: arr[current],
   };
-
-  try {
-    const res = await fetch("/api/report", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+  fetch("/api/report", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Report saved:", data);
+    })
+    .catch((err) => {
+      console.error("Failed to send report:", err);
     });
-    const data = await res.json();
-    console.log("Report sent:", data);
-  } catch (e) {
-    console.error("Failed to send report:", e);
-  }
   document.getElementById("fine").checked = true;
   document.getElementById("newTag").value = "";
   document.getElementById("issueReport").value = "";
