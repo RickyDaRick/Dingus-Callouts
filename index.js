@@ -265,9 +265,13 @@ back.addEventListener("mousedown", () => {
 
 clas.addEventListener("click", () => {
   gamemode = "classic";
+  const grid = document.querySelector(".mapBtns");
+  grid.style.overflowY = "auto";
   click.play();
 });
 back.addEventListener("click", () => {
+  const grid = document.querySelector(".mapBtns");
+  grid.style.overflowY = "hidden";
   if (back.style.opacity == "1") click.play();
   if (map == "selecting") {
     bord.style.opacity = 0;
@@ -415,7 +419,6 @@ for (let i = 0; i < 100; i++) {
 for (i = 0; i < maps.length; i++) {
   const el = maps[i];
   el.style.padding = "10px";
-  el.style.overflow = "hidden";
   el.style.opacity = 0;
   el.style.transform = "scale(20)";
   if (!play) el.style.pointerEvents = "default";
@@ -433,7 +436,6 @@ function animate() {
       const el = maps[i];
       el.style.padding = "10px";
       el.style.opacity = 0;
-      el.style.overflow = "hidden";
       el.style.transform = "scale(20)";
       if (!play) el.style.pointerEvents = "default";
       else el.style.pointerEvents = "pointer";
@@ -484,7 +486,6 @@ function animate() {
           maps.forEach((el) => {
             el.style.opacity = 1;
             el.style.transform = "scale(1)";
-            el.style.overflow = "auto";
             el.style.pointerEvents = "pointer";
           });
         }
