@@ -2,6 +2,8 @@ const vol = localStorage.getItem("volume") || 1;
 let arr = [];
 let callouts = [];
 let current = 0;
+let map;
+let mode;
 const reportBtn = document.getElementById("report");
 const overlay = document.getElementById("overlay");
 const modal = document.getElementById("reportModal");
@@ -261,8 +263,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
   }
   const params = new URLSearchParams(window.location.search);
-  const map = params.get("map");
-  const mode = params.get("mode");
+  map = params.get("map");
+  mode = params.get("mode");
   fetch(map)
     .then((res) => res.text())
     .then((text) => {
