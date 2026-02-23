@@ -2,6 +2,9 @@ const vol = localStorage.getItem("volume") || 1;
 let arr = [];
 let callouts = [];
 let current = 0;
+const reportBtn = document.getElementById("report");
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("reportModal");
 const music = new Audio("audio/Nando Wando - Rush!.wav");
 music.volume = vol;
 music.loop = true;
@@ -493,9 +496,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
     texter.value = "";
   });
-  const reportBtn = document.getElementById("report");
-  const overlay = document.getElementById("overlay");
-  const modal = document.getElementById("reportModal");
   const closeReport = document.getElementById("closeReport");
   reportBtn.addEventListener("click", () => {
     click.play();
