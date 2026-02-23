@@ -1,5 +1,7 @@
 const vol = localStorage.getItem("volume") || 1;
 let arr = [];
+let callouts = [];
+let current = 0;
 const music = new Audio("audio/Nando Wando - Rush!.wav");
 music.volume = vol;
 music.loop = true;
@@ -258,8 +260,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const params = new URLSearchParams(window.location.search);
   const map = params.get("map");
   const mode = params.get("mode");
-  let callouts = [];
-  let current = 0;
   fetch(map)
     .then((res) => res.text())
     .then((text) => {
