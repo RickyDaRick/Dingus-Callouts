@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         number.style.transition = "transform 0.5s ease-in-out";
         number.style.transform = "translate(-50%, 0%)";
       } else {
-        let removeCount = arr.length - 25;
+        let removeCount = arr.length - 15;
 
         for (let i = 0; i < removeCount; i++) {
           current = Math.floor(Math.random() * arr.length);
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         populate = true;
       }
     } else {
-      bar.style.width = Math.round(percentage * 18.3333333) + "px";
+      bar.style.width = Math.round(percentage * 9.166666666667) + "px";
       percentage += 0.015;
       whatsLeft.textContent =
         arr.length +

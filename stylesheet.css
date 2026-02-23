@@ -117,8 +117,16 @@ canvas {
 }
 .mapBtns {
   position: fixed;
-  top: 20%;
-  left: 0%;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  padding: 7rem 3rem 3rem 3rem;
+  justify-content: center;
+  align-content: start;
+  overflow: auto;
+  scrollbar-width: auto;
+  scrollbar-color: bisque #796c5c;
 }
 #dotCanvas {
   pointer-events: none;
@@ -131,4 +139,10 @@ canvas {
   padding: 10px 20px;
   cursor: pointer;
   transition: opacity 0.3s ease;
+}
+.mappool {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
