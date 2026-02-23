@@ -452,57 +452,61 @@ document.addEventListener("DOMContentLoaded", (e) => {
     window.location.href = "index.html";
   });
   document.getElementById("skip").addEventListener("click", (e) => {
-    const click1 = new Audio("audio/bad.mp3");
-    click1.volume = vol;
-    click1.play();
-    if (texter.placeholder == "Press Enter") {
-      percentage += 10;
-      arr.splice(current, 1);
+    if (document.getElementById("skip").style.opacity == 1) {
+      const click1 = new Audio("audio/bad.mp3");
+      click1.volume = vol;
+      click1.play();
+      if (texter.placeholder == "Press Enter") {
+        percentage += 10;
+        arr.splice(current, 1);
 
-      if (arr.length === 0) return;
+        if (arr.length === 0) return;
 
-      texter.value = "";
-      texter.focus();
-      tag.style.filter = "blur(10px)";
-      texter.placeholder = "type guess here";
+        texter.value = "";
+        texter.focus();
+        tag.style.filter = "blur(10px)";
+        texter.placeholder = "type guess here";
 
-      current = Math.floor(Math.random() * arr.length);
-      guessImg.src = arr[current][0];
-      guessImg.onload = () => {
-        guessImg.classList.add("show");
-      };
-      callouts = [];
-      tag.innerText = "";
-      tag.innerHTML = "";
-      const texterRect = texter.getBoundingClientRect();
-      tag.style.top = texterRect.bottom + 10 + "px";
-      for (let i = 0; i < arr[current].length - 1; i++) {
-        callouts[i] = arr[current][i + 1];
-        const span = document.createElement("span");
-        if (i === 0 || whitelist.includes(callouts[i])) {
-          span.style.color = "#ffd166";
-          span.textContent = callouts[i] + "    -3s";
-        } else if (blacklist.includes(callouts[i])) {
-          span.style.color = "#ff3c3c";
-          span.textContent = callouts[i] + "    +1.5s";
-        } else {
-          span.textContent = callouts[i] + "    -0.5s";
+        current = Math.floor(Math.random() * arr.length);
+        guessImg.src = arr[current][0];
+        guessImg.onload = () => {
+          guessImg.classList.add("show");
+        };
+        callouts = [];
+        tag.innerText = "";
+        tag.innerHTML = "";
+        const texterRect = texter.getBoundingClientRect();
+        tag.style.top = texterRect.bottom + 10 + "px";
+        for (let i = 0; i < arr[current].length - 1; i++) {
+          callouts[i] = arr[current][i + 1];
+          const span = document.createElement("span");
+          if (i === 0 || whitelist.includes(callouts[i])) {
+            span.style.color = "#ffd166";
+            span.textContent = callouts[i] + "    -3s";
+          } else if (blacklist.includes(callouts[i])) {
+            span.style.color = "#ff3c3c";
+            span.textContent = callouts[i] + "    +1.5s";
+          } else {
+            span.textContent = callouts[i] + "    -0.5s";
+          }
+          tag.appendChild(span);
+          tag.appendChild(document.createElement("br"));
         }
-        tag.appendChild(span);
-        tag.appendChild(document.createElement("br"));
+      } else {
+        tag.style.filter = "blur(0px)";
+        texter.placeholder = "Press Enter";
+        texter.focus();
       }
-    } else {
-      tag.style.filter = "blur(0px)";
-      texter.placeholder = "Press Enter";
-      texter.focus();
+      texter.value = "";
     }
-    texter.value = "";
   });
   const closeReport = document.getElementById("closeReport");
   reportBtn.addEventListener("click", () => {
-    click.play();
-    overlay.classList.add("show");
-    modal.classList.add("show");
+    if (reportBtn.style.opacity == 1) {
+      click.play();
+      overlay.classList.add("show");
+      modal.classList.add("show");
+    }
   });
   overlay.addEventListener("click", closeModal);
 
