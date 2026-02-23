@@ -433,7 +433,7 @@ textarea {
   margin: 10px;
 
   font-family: "Hippo";
-  font-size: 22px;
+  font-size: 25px;
   color: #f8f8f8;
 
   text-shadow:
@@ -442,7 +442,7 @@ textarea {
     -5px 5px 0 #5831a1,
     5px 5px 0 #5831a1;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.375);
   border: 5px solid #5831a1;
   border-radius: 15px;
 
