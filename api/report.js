@@ -3,16 +3,16 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { username, issue, quality, map } = req.body;
+  const { tag, issue, quality, map } = req.body;
 
-  if (!username || !issue || !quality || !map) {
+  if (!tag || !issue || !quality || !map) {
     return res.status(400).json({ error: "Missing required fields" });
   }
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
   const filePath = `reports/report-${timestamp}.txt`;
 
   const content = `
-Callout: ${username}
+Callout: ${tag}
 Map: ${map}
 Quality: ${quality}
 Issue: ${issue}
@@ -20,7 +20,7 @@ Timestamp: ${new Date().toISOString()}
   `.trim();
 
   const body = {
-    message: `New report from ${username} at ${timestamp}`,
+    message: `New report from ${tag} at ${timestamp}`,
     content: Buffer.from(content).toString("base64"),
     branch: "main",
   };

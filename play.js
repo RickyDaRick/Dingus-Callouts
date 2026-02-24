@@ -40,6 +40,7 @@ const whitelist = [
   "mud door",
   "elbow",
   "control door",
+  "kitchen door",
 ];
 const blacklist = [
   "cement",
@@ -53,6 +54,9 @@ const blacklist = [
   "assembly pixel",
   "assembly head glitch",
   "kitchen",
+  "kitchen walls",
+  "server headglitch",
+  "vending head glitch",
 ];
 let userId = localStorage.getItem("userId");
 let username = localStorage.getItem("username");
@@ -597,7 +601,8 @@ async function populateLeaderboard() {
 }
 closeReport.addEventListener("click", async () => {
   const body = {
-    username: document.getElementById("newTag").value || "Anonymous",
+    tag:
+      document.getElementById("newTag").value + " | " + username || "Anonymous",
     quality: document.querySelector('input[name="quality"]:checked').value,
     issue: document.getElementById("issueReport").value || "No details",
     map: arr[current],
