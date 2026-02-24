@@ -41,6 +41,7 @@ const whitelist = [
   "elbow",
   "control door",
   "kitchen door",
+  "exo dp",
 ];
 const blacklist = [
   "cement",
@@ -261,7 +262,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       }
 
       const data = await res.json();
-      console.log("Leaderboard update:", data);
     } catch (e) {
       console.error("Fetch failed:", e);
     }
@@ -613,9 +613,6 @@ closeReport.addEventListener("click", async () => {
     body: JSON.stringify(body),
   })
     .then((res) => res.json())
-    .then((data) => {
-      console.log("Report saved:", data);
-    })
     .catch((err) => {
       console.error("Failed to send report:", err);
     });

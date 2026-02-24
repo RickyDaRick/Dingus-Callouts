@@ -87,7 +87,7 @@
 [/images/lab/20260127150955_1.jpg, fruit, default plant, dp]
 [/images/lab/20260127151022_1.jpg, vending window]
 [/images/lab/20260127151033_1.jpg, exo stairs, vending stairs]
-[/images/lab/20260127151133_1.jpg, exo default, default plant, dp]
+[/images/lab/20260127151133_1.jpg, exo default, exo dp, default plant, dp]
 [/images/lab/20260127151148_1.jpg, lift, airlift, assembly corner]
 [/images/lab/20260127151201_1.jpg, boxes, assembly jump up, assembly boost]
 [/images/lab/20260127151215_1.jpg, vials, assembly head glitch, assembly headglitch, assembly pixel]
