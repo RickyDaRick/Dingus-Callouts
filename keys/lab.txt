@@ -108,5 +108,3 @@
 [/images/lab/20260127161314_1.jpg, metal desk, default plant, dp]
 [/images/lab/20260127161320_1.jpg, u desk, udesk, storage rotate, control rotate]
 [/images/lab/20260127161326_1.jpg, control window]
-
-

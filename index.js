@@ -377,6 +377,11 @@ lab.addEventListener("mouseup", handleMouseUp);
 lab.addEventListener("mouseleave", handleMouseLeave);
 lab.addEventListener("mouseenter", handleMouseEnter);
 lab.addEventListener("click", handleClick);
+chal.addEventListener("mousedown", handleDown);
+chal.addEventListener("mouseup", handleMouseUp);
+chal.addEventListener("mouseleave", handleMouseLeave);
+chal.addEventListener("mouseenter", handleMouseEnter);
+chal.addEventListener("click", handleClick);
 function handleDown(e) {
   const n = e.target.alt;
   e.target.src = "images/" + n + "3.png";
