@@ -1,0 +1,5 @@
+Callout:  | rickydarick
+Map: /images/lab/20260127144346_1.jpg,mudroom door,mud door,closet door
+Quality: fine
+Issue: remember to add animation for the leadboard populating showing up
+Timestamp: 2026-02-24T00:38:32.725Z
