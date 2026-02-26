@@ -30,12 +30,13 @@ const music = new Audio("audio/Nando Wando - Super Proto.wav");
 let map;
 playList = "";
 volumeSlider.value = localStorage.getItem("volume") || 0.5;
-click.volume = localStorage.getItem("volume");
-music.volume = localStorage.getItem("volume");
+click.volume = localStorage.getItem("volume") || 0.5;
+music.volume = localStorage.getItem("volume") || 0.5;
 play = false;
 music.loop = true;
 document.addEventListener("pointerdown", function () {
-  if (music.paused || music.duration == 0) music.play();
+  if (!music.paused && music.duration != 0);
+  else music.play();
 });
 start.addEventListener("mouseenter", () => {
   start.src = "images/btnStartHover.svg";
@@ -357,7 +358,7 @@ oreg.style.transition = "";
 clas.addEventListener("transitionend", (e) => {
   if (clas.style.transform == "translate(-100%, -100%)") {
     const hit = new Audio("audio/impact.mp3");
-    hit.volume = localStorage.getItem("volume") * 0.75;
+    hit.volume = localStorage.getItem("volume") * 0.75 || 0.5;
     hit.play();
   }
 });
