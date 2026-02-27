@@ -468,8 +468,6 @@ textarea {
   backdrop-filter: blur(8px);
   scrollbar-width: thin;
   scrollbar-color: #ffd166 #5831a1;
-  opacity: 0;
-  transition: "opacity 1s ease";
 }
 .leaderboardRow img {
   width: 60px;
@@ -485,6 +483,10 @@ textarea {
 .leaderboardRow:hover {
   transform: scale(1.02);
   background-color: rgba(0, 0, 0, 0.4);
+}
+.leaderboardRow {
+  opacity: 0;
+  transition: "opacity 1s ease";
 }
 .playerInfo {
   display: flex;
