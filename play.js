@@ -594,8 +594,7 @@ async function populateLeaderboard() {
       row.appendChild(info);
       row.appendChild(score);
       // row.appendChild(mode);
-      row.style.opacity = 0;
-      row.style.transition = "opacity 1s ease";
+      row.style.opacity = 1;
       container.appendChild(row);
     }
   });
