@@ -72,17 +72,20 @@ canvas {
 #logo {
   position: relative;
   top: 0;
+  width: 100vh;
   transition: transform 4s ease;
 }
 #disc {
   position: relative;
   top: 0;
+  width: 20vh;
   transition: transform 4s ease;
   cursor: pointer;
 }
 #start {
   position: relative;
   top: 0;
+  width: 20vh;
   transition: transform 4s ease;
   cursor: pointer;
 }
