@@ -516,7 +516,7 @@ function animate() {
     }
   }
   dots.forEach((dot) => {
-    if (dot.radius > 20000 && backH == false) {
+    if (dot.radius > 50000 && backH == false) {
       backH = true;
       window.location.reload();
     }
