@@ -254,16 +254,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, username, avatarUrl, mode, time }),
       });
-
       if (!res.ok) {
         const text = await res.text();
         console.error("Server returned an error:", text);
+        populateLeaderboard();
         return;
       }
-
       const data = await res.json();
+      populateLeaderboard();
     } catch (e) {
       console.error("Fetch failed:", e);
+      populateLeaderboard();
     }
   }
   const params = new URLSearchParams(window.location.search);
@@ -376,7 +377,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
           area2[i].style.opacity = "1";
         }
         document.getElementById("oop").textContent = randomWin;
-        populateLeaderboard();
         populate = true;
       }
     } else {
@@ -552,7 +552,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       ctx.fillStyle = "rgba(88, 49, 161, " + dot.alpha + ")";
       ctx.fill();
     });
-
     requestAnimationFrame(animate);
   }
   animate();
@@ -596,6 +595,9 @@ async function populateLeaderboard() {
       row.appendChild(score);
       // row.appendChild(mode);
       container.appendChild(row);
+      container.style.opacity = 0;
+      container.style.transition = "opacity 1s ease";
+      container.style.opacity = 1;
     }
   });
 }
