@@ -515,9 +515,8 @@ function animate() {
     }
   }
   dots.forEach((dot) => {
-    if (dot.size > 100) {
+    if (dot.radius > 500) {
       window.location.reload();
-      console.log(dot.size);
     }
     dot.x += dot.dx;
     dot.y += dot.dy;
