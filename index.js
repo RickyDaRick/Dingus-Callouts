@@ -515,7 +515,7 @@ function animate() {
     }
   }
   dots.forEach((dot) => {
-    if (dot.size > 2000) window.location.reload();
+    if (dot.size > 500) window.location.reload();
     dot.x += dot.dx;
     dot.y += dot.dy;
     if (play) {
