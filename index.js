@@ -438,6 +438,7 @@ for (i = 0; i < maps.length; i++) {
   str = "transform " + rand + "s ease-in, opacity " + rand + "s ease";
   el.style.transition = str;
 }
+var backH = false;
 function animate() {
   if (back.style.opacity == "0") back.style.cursor = "default";
   else back.style.cursor = "pointer";
@@ -515,6 +516,10 @@ function animate() {
     }
   }
   dots.forEach((dot) => {
+    if (dot.radius > 20000 && backH == false) {
+      backH = true;
+      window.location.reload();
+    }
     dot.x += dot.dx;
     dot.y += dot.dy;
     if (play) {
