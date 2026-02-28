@@ -40,5 +40,12 @@
     "avatarUrl": "https://cdn.discordapp.com/avatars/1091828911194783865/e5bd562b26a020396c2d1a9d42f423ab.png",
     "mode": "bank",
     "time": 26.895000000001556
+  },
+  {
+    "userId": "1091828911194783865",
+    "username": "rickydarick",
+    "avatarUrl": "https://cdn.discordapp.com/avatars/1091828911194783865/e5bd562b26a020396c2d1a9d42f423ab.png",
+    "mode": "club",
+    "time": 21.910000000002032
   }
 ]
