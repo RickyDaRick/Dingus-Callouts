@@ -64,6 +64,65 @@ start.addEventListener("transitionend", () => {
     start.style.transition = "transform 4s ease";
   }
 });
+function isTouching(elem1, elem2) {
+  const rect1 = elem1.getBoundingClientRect();
+  const rect2 = elem2.getBoundingClientRect();
+  const overlap = !(
+    rect1.right < rect2.left ||
+    rect1.left > rect2.right ||
+    rect1.bottom < rect2.top ||
+    rect1.top > rect2.bottom
+  );
+  const touching =
+    rect1.right === rect2.left ||
+    rect1.left === rect2.right ||
+    rect1.bottom === rect2.top ||
+    rect1.top === rect2.bottom;
+  return overlap || touching;
+}
+const follower = document.getElementById("cur");
+document.addEventListener("mousemove", (e) => {
+  follower.style.left = `${e.clientX}px`;
+  follower.style.top = `${e.clientY}px`;
+  if (isTouching(follower, clas)) {
+    follower.style.backgroundColor = "#b691ff";
+    follower.style.opacity = 1;
+    follower.innerHTML = `Classic Mode!
+    <hr>
+    You have 2 minutes to guess 15 callouts for any map!
+    The better the callout, the more time is taken off!
+    Make sure you don't type an incorrect callout or
+    there's a chance more time will be added.
+  `;
+  } else if (isTouching(follower, ari)) {
+    follower.style.backgroundColor = "#ffe091";
+    follower.style.opacity = 1;
+    follower.innerHTML = `Ari Mode!
+    <hr>
+    Not done yet. This game mode is not decided yet.
+  `;
+  } else if (isTouching(follower, bino)) {
+    follower.style.backgroundColor = "#ff9191";
+    follower.style.opacity = 1;
+    follower.innerHTML =
+      `Bino Mode!
+    <hr>
+    Not done yet. This will be an online interactive` +
+      ` (similar to quizlet live, blooket, kahoot, etc.)
+  `;
+  } else if (isTouching(follower, goon)) {
+    follower.style.backgroundColor = "#bffffc";
+    follower.style.opacity = 1;
+    follower.innerHTML =
+      `Goonter Mode!
+    <hr>
+    Not done yet. This will be a wordle but for callouts. ` +
+      `The image will slowly fade in parts of the image after each guess. ` +
+      `The goal is to get the callout in like 6 guesses or so.`;
+  } else {
+    follower.style.opacity = 0;
+  }
+});
 start.addEventListener("click", () => {
   click.play();
   if (music.paused || music.duration == 0) {
