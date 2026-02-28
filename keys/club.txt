@@ -55,7 +55,7 @@
 [/images/club/20260228154616_1.jpg, sheet metal, sheet]
 [/images/club/20260228154624_1.jpg, couch, couches, bed couch]
 [/images/club/20260228154630_1.jpg, bathroom, bath, stalls, stall]
-[/images/club/20260228154639_1.jpg, 90 hall, 90, ninety, ninety hall, main hallway, main hall, 90 hallway, ninety hall]
+[/images/club/20260228154639_1.jpg, elbow, 90 hall, 90, ninety, ninety hall, main hallway, main hall, 90 hallway, ninety hall]
 [/images/club/20260228154645_1.jpg, gym]
 [/images/club/20260228154652_1.jpg, rack, gym rack, weight rack, bench press, bench]
 [/images/club/20260228154702_1.jpg, logi, logistics, logistic, logy]
