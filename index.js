@@ -388,6 +388,11 @@ bord.addEventListener("mouseup", handleMouseUp);
 bord.addEventListener("mouseleave", handleMouseLeave);
 bord.addEventListener("mouseenter", handleMouseEnter);
 bord.addEventListener("click", handleClick);
+bank.addEventListener("mousedown", handleDown);
+bank.addEventListener("mouseup", handleMouseUp);
+bank.addEventListener("mouseleave", handleMouseLeave);
+bank.addEventListener("mouseenter", handleMouseEnter);
+bank.addEventListener("click", handleClick);
 function handleDown(e) {
   const n = e.target.alt;
   e.target.src = "images/" + n + "3.png";

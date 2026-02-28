@@ -58,6 +58,7 @@ const blacklist = [
   "kitchen walls",
   "server headglitch",
   "vending head glitch",
+  "spider",
 ];
 let userId = localStorage.getItem("userId");
 let username = localStorage.getItem("username");
