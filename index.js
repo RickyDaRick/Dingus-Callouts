@@ -393,6 +393,11 @@ bank.addEventListener("mouseup", handleMouseUp);
 bank.addEventListener("mouseleave", handleMouseLeave);
 bank.addEventListener("mouseenter", handleMouseEnter);
 bank.addEventListener("click", handleClick);
+club.addEventListener("mousedown", handleDown);
+club.addEventListener("mouseup", handleMouseUp);
+club.addEventListener("mouseleave", handleMouseLeave);
+club.addEventListener("mouseenter", handleMouseEnter);
+club.addEventListener("click", handleClick);
 function handleDown(e) {
   const n = e.target.alt;
   e.target.src = "images/" + n + "3.png";
