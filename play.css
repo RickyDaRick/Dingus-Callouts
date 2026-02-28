@@ -428,27 +428,25 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   padding: 12px 20px;
   margin: 10px;
-
   font-family: "Hippo";
   font-size: 25px;
   color: #f8f8f8;
-
   text-shadow:
     -5px -5px 0 #5831a1,
     5px -5px 0 #5831a1,
     -5px 5px 0 #5831a1,
     5px 5px 0 #5831a1;
-
   background: rgba(0, 0, 0, 0.375);
   border: 5px solid #5831a1;
   border-radius: 15px;
-
+  opacity: 0;
   transition:
+    opacity 1s ease,
     transform 0.2s ease,
     background-color 0.2s ease;
+  will-change: transform;
 }
 #leaderboardContainer {
   pointer-events: all;
@@ -483,10 +481,6 @@ textarea {
 .leaderboardRow:hover {
   transform: scale(1.02);
   background-color: rgba(0, 0, 0, 0.4);
-}
-.leaderboardRow {
-  opacity: 0;
-  transition: opacity 1s ease;
 }
 .playerInfo {
   display: flex;

@@ -256,16 +256,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
         body: JSON.stringify({ userId, username, avatarUrl, mode, time }),
       });
       if (!res.ok) {
-        const text = await res.text();
-        console.error("Server returned an error:", text);
-        populateLeaderboard();
+        console.error(await res.text());
         return;
       }
-      const data = await res.json();
-      populateLeaderboard();
+      await res.json();
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      await populateLeaderboard();
     } catch (e) {
       console.error("Fetch failed:", e);
-      populateLeaderboard();
     }
   }
   const params = new URLSearchParams(window.location.search);
