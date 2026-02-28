@@ -1,5 +1,0 @@
-Callout: warehouse double | null
-Map: /images/lab/20260127150219_1.jpg,warehouse walls,warehouse breach,garage breach,garage walls,warehouse wall,warehouse
-Quality: fine
-Issue: No details
-Timestamp: 2026-02-27T17:24:41.636Z

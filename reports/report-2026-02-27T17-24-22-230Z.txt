@@ -1,5 +1,0 @@
-Callout: top lobby | null
-Map: /images/lab/20260127144122_1.jpg,h door,top lobby door,terrace door,lobby door
-Quality: fine
-Issue: No details
-Timestamp: 2026-02-27T17:24:22.230Z

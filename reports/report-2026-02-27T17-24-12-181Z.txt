@@ -1,5 +1,0 @@
-Callout: Snowmobile | null
-Map: /images/chal/20260225163541_1.jpg,snowmobile garage,main garage
-Quality: fine
-Issue: No details
-Timestamp: 2026-02-27T17:24:12.184Z

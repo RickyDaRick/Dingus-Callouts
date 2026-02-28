@@ -17,7 +17,7 @@
 [/images/chal/20260225163431_1.jpg, main breach, snowmobile breach, snowmobile walls, snowmobiles, j breach, j walls]
 [/images/chal/20260225163439_1.jpg, j balc, j balcony, jbalc]
 [/images/chal/20260225163524_1.jpg, dp, default plant, trash]
-[/images/chal/20260225163541_1.jpg, snowmobile garage, main garage]
+[/images/chal/20260225163541_1.jpg, snowmobile, snowmobile garage, main garage]
 [/images/chal/20260225163547_1.jpg, shelf, tuck, shelves]
 [/images/chal/20260225163553_1.jpg, boat, shelf, tuck]
 [/images/chal/20260225163602_1.jpg, con, connector, storage, storage room]
