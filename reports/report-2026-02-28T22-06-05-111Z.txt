@@ -1,5 +1,0 @@
-Callout: elbow | rickydarick
-Map: /images/club/20260228154639_1.jpg,90 hall,90,ninety,ninety hall,main hallway,main hall,90 hallway,ninety hall
-Quality: fine
-Issue: No details
-Timestamp: 2026-02-28T22:06:05.114Z

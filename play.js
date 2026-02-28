@@ -258,6 +258,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
       if (!res.ok) {
         console.error(await res.text());
+        populateLeaderboard();
         return;
       }
       await res.json();
@@ -265,6 +266,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       await populateLeaderboard();
     } catch (e) {
       console.error("Fetch failed:", e);
+      populateLeaderboard();
     }
   }
   const params = new URLSearchParams(window.location.search);
