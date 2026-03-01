@@ -134,6 +134,9 @@ canvas {
   overflow-y: hidden;
   scrollbar-width: auto;
   scrollbar-color: bisque #796c5c;
+  cursor: auto;
+  z-index: 1000;
+  pointer-events: none;
 }
 #dotCanvas {
   pointer-events: none;
@@ -146,12 +149,16 @@ canvas {
   padding: 10px 20px;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  z-index: 2000;
 }
 .mappool {
+  will-change: transform;
+  backface-visibility: hidden;
   width: 100%;
   aspect-ratio: 5 / 3;
   object-fit: contain;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 #cur {
   height: 270px;

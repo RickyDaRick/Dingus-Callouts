@@ -384,6 +384,25 @@ back.addEventListener("click", () => {
     gamemode = "none";
     map = "none";
     tick1 = 0;
+    bord.style.pointerEvents = "none";
+    theme.style.pointerEvents = "none";
+    bank.style.pointerEvents = "none";
+    kafe.style.pointerEvents = "none";
+    club.style.pointerEvents = "none";
+    chal.style.pointerEvents = "none";
+    fort.style.pointerEvents = "none";
+    lab.style.pointerEvents = "none";
+    oreg.style.pointerEvents = "none";
+    kanal.style.pointerEvents = "none";
+    sky.style.pointerEvents = "none";
+    outback.style.pointerEvents = "none";
+    villa.style.pointerEvents = "none";
+    lair.style.pointerEvents = "none";
+    coast.style.pointerEvents = "none";
+    cons.style.pointerEvents = "none";
+    all.style.pointerEvents = "none";
+    const mapGrid = document.querySelector(".mapBtns");
+    mapGrid.style.pointerEvents = "none";
   } else {
     logo.style.transition = "transform 2s ease";
     start.style.transition = "transform 2s ease";
@@ -437,8 +456,6 @@ function handleSlam(e) {
       a.volume = volumeSlider.value * 0.25;
       a.play();
     }
-  } else if (e.target.alt === "bord") {
-    window.location.href = "play.html?map=" + playList + "&mode=" + gamemode;
   }
 }
 lab.addEventListener("mousedown", handleDown);
@@ -513,8 +530,8 @@ for (i = 0; i < maps.length; i++) {
   el.style.padding = "10px";
   el.style.opacity = 0;
   el.style.transform = "scale(20)";
-  if (!play) el.style.pointerEvents = "default";
-  else el.style.pointerEvents = "pointer";
+  if (gamemode == "none") el.style.pointerEvents = "none";
+  else el.style.pointerEvents = "auto";
   rand = ((17 - i) * 1) / 10 + 0.2;
   str = "transform " + rand + "s ease-in, opacity " + rand + "s ease";
   el.style.transition = str;
@@ -530,8 +547,8 @@ function animate() {
       el.style.padding = "10px";
       el.style.opacity = 0;
       el.style.transform = "scale(20)";
-      if (!play) el.style.pointerEvents = "default";
-      else el.style.pointerEvents = "pointer";
+      if (gamemode == "none") el.style.pointerEvents = "none";
+      else el.style.pointerEvents = "auto";
       rand = ((17 - i) * 1) / 10 + 0.2;
       str = "transform " + rand + "s ease-in, opacity " + rand + "s ease";
       el.style.transition = str;
@@ -577,9 +594,10 @@ function animate() {
         if (map == "none") {
         } else {
           maps.forEach((el) => {
+            document.querySelector(".mapBtns").style.pointerEvents = "auto";
             el.style.opacity = 1;
             el.style.transform = "scale(1)";
-            el.style.pointerEvents = "pointer";
+            el.style.pointerEvents = "auto";
           });
         }
       } else if (choose) {
