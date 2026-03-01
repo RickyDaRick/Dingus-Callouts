@@ -9,7 +9,7 @@
 [/images/club/20260228153839_1.jpg, construction spawn, construction site, construction]
 [/images/club/20260228153846_1.jpg, shed, conn roof, construction site roof, construction roof, con roof]
 [/images/club/20260228153906_1.jpg, chains, chain, chains rappel, chain rappel]
-[/images/club/20260228153913_1.jpg, trash plat, construction plat, chains plat, chain plat, con wall, construction wall]
+[/images/club/20260228153913_1.jpg, con single, trash plat, construction plat, chains plat, chain plat, con wall, construction wall]
 [/images/club/20260228153919_1.jpg, trash door, chains door, stock door, chain door]
 [/images/club/20260228153926_1.jpg, central door, kitchen hall door, kitchen door, main door]
 [/images/club/20260228153931_1.jpg, kitchen window, meat window]
