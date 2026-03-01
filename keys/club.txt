@@ -99,7 +99,7 @@
 [/images/club/20260228155405_1.jpg, kitchen drop, dp, default plant, arsenal dp]
 [/images/club/20260228155412_1.jpg, kitchen hatch, arsenal hatch]
 [/images/club/20260228155418_1.jpg, long, basement hall, basement hallway, long hall, long hallway]
-[/images/club/20260228155425_1.jpg, bottom stairs, bottom main stairs, bottom central stairs, bottom stair]
+[/images/club/20260228155425_1.jpg, bottom main, bottom main stairs, bottom central stairs, bottom stair]
 [/images/club/20260228155432_1.jpg, short, short hall, short hallway, triple walls, triple wall, basement hall, basement hallway]
 [/images/club/20260228155449_1.jpg, church, church room]
 [/images/club/20260228155501_1.jpg, church table, table]
