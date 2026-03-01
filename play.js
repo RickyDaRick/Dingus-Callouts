@@ -277,19 +277,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const params = new URLSearchParams(window.location.search);
   map = params.get("map");
   mode = params.get("mode");
-  fetch(map)
-    .then((res) => res.text())
-    .then((text) => {
-      arr = text
-        .split(/\r?\n/)
-        .map((line) => line.trim())
-        .filter((line) => line)
-        .map((line) => {
-          line = line.slice(1, -1);
-          const items = line.split(",").map((s) => s.trim());
-          return items;
-        });
-    });
+  if (map == "keys/all.txt") {
+    loadText("keys/lab.txt");
+    loadText("keys/club.txt");
+    loadText("keys/bord.txt");
+    loadText("keys/chal.txt");
+    loadText("keys/bank.txt");
+  } else {
+    loadText(map);
+  }
   const whatsLeft = document.getElementById("left");
   let percentage = 0;
   function handleCountdownComplete() {
@@ -625,3 +621,18 @@ closeReport.addEventListener("click", async () => {
   overlay.classList.remove("show");
   modal.classList.remove("show");
 });
+function loadText(str) {
+  fetch(str)
+    .then((res) => res.text())
+    .then((text) => {
+      const newData = text
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter((line) => line)
+        .map((line) => {
+          line = line.slice(1, -1);
+          return line.split(",").map((s) => s.trim());
+        });
+      arr = arr.concat(newData);
+    });
+}

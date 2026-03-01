@@ -466,6 +466,11 @@ club.addEventListener("mouseup", handleMouseUp);
 club.addEventListener("mouseleave", handleMouseLeave);
 club.addEventListener("mouseenter", handleMouseEnter);
 club.addEventListener("click", handleClick);
+all.addEventListener("mousedown", handleDown);
+all.addEventListener("mouseup", handleMouseUp);
+all.addEventListener("mouseleave", handleMouseLeave);
+all.addEventListener("mouseenter", handleMouseEnter);
+all.addEventListener("click", handleClick);
 function handleDown(e) {
   const n = e.target.alt;
   e.target.src = "images/" + n + "3.png";
@@ -484,9 +489,7 @@ function handleMouseEnter(e) {
 }
 function handleClick(e) {
   click.play();
-  if (e.target.alt !== "all") {
-    playList = "keys/" + e.target.alt + ".txt";
-  }
+  playList = "keys/" + e.target.alt + ".txt";
 }
 const canvas = document.getElementById("dotCanvas");
 const ctx = canvas.getContext("2d");
