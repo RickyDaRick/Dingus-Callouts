@@ -45,6 +45,8 @@ const whitelist = [
   "control door",
   "kitchen door",
   "exo dp",
+  "blue stairs",
+  "blue stair",
 ];
 const blacklist = [
   "cement",
