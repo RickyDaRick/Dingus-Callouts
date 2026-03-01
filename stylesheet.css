@@ -45,8 +45,7 @@ body {
 .user {
   opacity: 1;
   transition: opacity 0.5s ease;
-  position: fixed;
-  bottom: 10px;
+  position: relative;
   left: 50%;
   text-align: center;
   transform: translateX(-50%);
@@ -76,7 +75,7 @@ canvas {
 #logo {
   position: relative;
   top: 0;
-  width: 100vh;
+  width: clamp(10px, 100vw, 1000px);
   transition: transform 4s ease;
 }
 #disc {
@@ -103,22 +102,22 @@ canvas {
   cursor: pointer;
 }
 #bino {
-  transform: translate(-100vw, 150%);
+  transform: translate(-110vw, 150%);
   transition: transform 0.5s ease-in;
   will-change: transform;
 }
 #clas {
-  transform: translate(-100vw, -150%);
+  transform: translate(-110vw, -150%);
   transition: transform 0.5s ease-in;
   will-change: transform;
 }
 #ari {
-  transform: translate(100vw, -150%);
+  transform: translate(110vw, -150%);
   transition: transform 0.5s ease-in;
   will-change: transform;
 }
 #goon {
-  transform: translate(100vw, 150%);
+  transform: translate(110vw, 150%);
   transition: transform 0.5s ease-in;
   will-change: transform;
 }

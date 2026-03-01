@@ -23,7 +23,7 @@
 [/images/chal/20260225163602_1.jpg, con, connector, storage, storage room]
 [/images/chal/20260225163609_1.jpg, con hatch, fireplace hatch, connector hatch, storage hatch]
 [/images/chal/20260225163625_1.jpg, pillar]
-[/images/chal/20260225163631_1.jpg, shelf, rotate, wine shelf]
+[/images/chal/20260225163631_1.jpg, rack, wine rack, shelf, rotate, wine shelf]
 [/images/chal/20260225163637_1.jpg, barrels, barrel]
 [/images/chal/20260225163644_1.jpg, halfwall, half wall, wine halfwall, boiler wall]
 [/images/chal/20260225163653_1.jpg, wine hatch, dining hatch]

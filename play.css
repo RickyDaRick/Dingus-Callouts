@@ -47,11 +47,14 @@ h1 {
 #guessImage {
   margin-left: auto;
   margin-right: auto;
-  width: 1100px;
+  max-width: 1100px;
+  width: 90%;
+  aspect-ratio: 11 / 6;
   border: 10px solid #000000;
   border-radius: 15px;
   opacity: 0;
-  transform: translateY(500px);
+  position: absolute;
+  transform: translate(-50%, 200%);
   transition:
     transform 0.5s ease-in,
     opacity 0.5s ease;
@@ -88,7 +91,7 @@ h1 {
 #home {
   position: fixed;
   bottom: 10px;
-  right: 25%;
+  right: 11%;
   padding: 20px 4%;
   font-family: "Hippo";
   font-size: 30px;
@@ -116,7 +119,7 @@ h1 {
 #restart {
   position: fixed;
   bottom: 10px;
-  left: 25%;
+  left: 11%;
   padding: 20px 10%;
   font-family: "Hippo";
   font-size: 30px;
@@ -141,7 +144,6 @@ h1 {
   background-color: #5831a1;
   color: #ffd166;
 }
-
 #report {
   opacity: 0;
   position: absolute;
@@ -149,7 +151,6 @@ h1 {
   left: 10px;
   padding: 10px 20px;
   font-family: "Hippo";
-  font-size: 30px;
   color: #f8f8f8;
   background-color: rgba(0, 0, 0, 0);
   border: 5px solid #5831a1;
@@ -166,6 +167,8 @@ h1 {
     color 0.3s ease;
   z-index: 200;
   background-color: #7655c7;
+  width: clamp(150px, 40%, 550px);
+  font-size: 20px;
 }
 #report:hover {
   background-color: #5831a1;
@@ -173,7 +176,8 @@ h1 {
 }
 #timer {
   position: fixed;
-  width: 1100px;
+  width: 90%;
+  max-width: 1100px;
   height: 20px;
   background-color: #665881;
   border: 5px solid #5831a1;
@@ -214,11 +218,11 @@ h1 {
 #texter.focus {
   text-align: center;
   font-size: 45px;
-  position: fixed;
+  position: absolute;
   font-family: "Hippo";
   color: #f8f8f8;
-  width: 1100px;
-  height: 60px;
+  max-width: 1100px;
+  width: 90%;
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   outline-color: rgba(0, 0, 0, 0);
@@ -226,8 +230,7 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0);
   outline: rgba(0, 0, 0, 0);
   opacity: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(200%);
+  transform: translateX(-50%) translateY(clamp(0px, 62vw, 680px));
   overflow: hidden;
   transition: opacity 1.5s ease-in;
   text-shadow:
@@ -240,7 +243,7 @@ h1 {
   z-index: 300;
 }
 #guessImage.show {
-  transform: translateY(15%);
+  transform: translateX(-50%) translateY(80px);
   opacity: 1;
 }
 #texter::placeholder {
@@ -254,10 +257,9 @@ h1 {
   filter: blur(10px);
   text-align: center;
   font-size: 30px;
-  position: fixed;
+  position: absolute;
   font-family: "Hippo";
   color: #f8f8f8;
-  width: 700px;
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   outline-color: rgba(0, 0, 0, 0);
@@ -266,8 +268,6 @@ h1 {
   outline: rgba(0, 0, 0, 0);
   white-space: pre;
   opacity: 0;
-  left: 50%;
-  transform: translateX(-50%);
   overflow: hidden;
   transition: opacity 1.5s ease-in;
   text-shadow:
@@ -275,6 +275,9 @@ h1 {
     3px -3px 0 #5831a1,
     -3px 3px 0 #5831a1,
     3px 3px 0 #5831a1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #overlay {
   position: fixed;
@@ -299,7 +302,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
-  width: 500px;
+  width: 70%;
   padding: 20px;
   border-radius: 15px;
   background: #665881;
@@ -319,7 +322,7 @@ h1 {
   transform: translate(-50%, -50%) scale(1);
 }
 textarea {
-  width: 400px;
+  width: 100%;
   font-size: 15px;
   font-family: "Comfort", Arial, sans-serif;
   text-align: left;

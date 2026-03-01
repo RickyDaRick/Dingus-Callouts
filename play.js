@@ -1,3 +1,6 @@
+document.addEventListener("mousemove", () => {
+  localStorage.setItem("musictime", music.currentTime);
+});
 const vol = localStorage.getItem("volume") || 1;
 let arr = [];
 let callouts = [];
@@ -65,6 +68,8 @@ let userId = localStorage.getItem("userId");
 let username = localStorage.getItem("username");
 let avatarUrl = localStorage.getItem("avatarUrl");
 document.addEventListener("DOMContentLoaded", (e) => {
+  const tag = document.getElementById("tags");
+  const texter = document.getElementById("texter");
   function lerp(start, end, t) {
     return start + (end - start) * t;
   }
@@ -285,9 +290,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           return items;
         });
     });
-  const texter = document.getElementById("texter");
   const whatsLeft = document.getElementById("left");
-  const tag = document.getElementById("tags");
   let percentage = 0;
   function handleCountdownComplete() {
     if (arr.length === 0) return;
@@ -308,8 +311,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     };
     callouts = [];
     tag.innerText = "";
-    const texterRect = texter.getBoundingClientRect();
-    tag.style.top = texterRect.bottom + 10 + "px";
     for (let i = 0; i < arr[current].length - 1; i++) {
       callouts[i] = arr[current][i + 1];
       const span = document.createElement("span");
@@ -338,6 +339,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
   bar.style.width = "0px";
   function tick() {
+    var texterRect = texter.getBoundingClientRect();
+    tag.style.top = texterRect.bottom + 10 + "px";
     if (percentage > 120) {
       if (!populate) {
         let area = document.getElementsByClassName("area");
@@ -409,8 +412,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
         callouts = [];
         tag.innerText = "";
         tag.innerHTML = "";
-        const texterRect = texter.getBoundingClientRect();
-        tag.style.top = texterRect.bottom + 10 + "px";
         for (let i = 0; i < arr[current].length - 1; i++) {
           callouts[i] = arr[current][i + 1];
           const span = document.createElement("span");
@@ -481,8 +482,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
         callouts = [];
         tag.innerText = "";
         tag.innerHTML = "";
-        const texterRect = texter.getBoundingClientRect();
-        tag.style.top = texterRect.bottom + 10 + "px";
         for (let i = 0; i < arr[current].length - 1; i++) {
           callouts[i] = arr[current][i + 1];
           const span = document.createElement("span");

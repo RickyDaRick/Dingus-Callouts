@@ -80,45 +80,54 @@ function isTouching(elem1, elem2) {
     rect1.top === rect2.bottom;
   return overlap || touching;
 }
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 const follower = document.getElementById("cur");
 document.addEventListener("mousemove", (e) => {
-  follower.style.left = `${e.clientX}px`;
-  follower.style.top = `${e.clientY}px`;
-  if (isTouching(follower, clas)) {
-    follower.style.backgroundColor = "#b691ff";
-    follower.style.opacity = 1;
-    follower.innerHTML = `Classic Mode!
+  if (
+    logo.style.transform == "translateY(-4000px)" &&
+    gamemode == "none" &&
+    !isTouchDevice
+  ) {
+    follower.style.left = `${e.clientX}px`;
+    follower.style.top = `${e.clientY}px`;
+    if (isTouching(follower, clas)) {
+      follower.style.backgroundColor = "#b691ff";
+      follower.style.opacity = 1;
+      follower.innerHTML = `Classic Mode!
     <hr>
     You have 2 minutes to guess 15 callouts for any map!
     The better the callout, the more time is taken off!
     Make sure you don't type an incorrect callout or
     there's a chance more time will be added.
   `;
-  } else if (isTouching(follower, ari)) {
-    follower.style.backgroundColor = "#ffe091";
-    follower.style.opacity = 1;
-    follower.innerHTML = `Ari Mode!
+    } else if (isTouching(follower, ari)) {
+      follower.style.backgroundColor = "#ffe091";
+      follower.style.opacity = 1;
+      follower.innerHTML = `Ari Mode!
     <hr>
     Not done yet. This game mode is not decided yet.
   `;
-  } else if (isTouching(follower, bino)) {
-    follower.style.backgroundColor = "#ff9191";
-    follower.style.opacity = 1;
-    follower.innerHTML =
-      `Bino Mode!
+    } else if (isTouching(follower, bino)) {
+      follower.style.backgroundColor = "#ff9191";
+      follower.style.opacity = 1;
+      follower.innerHTML =
+        `Bino Mode!
     <hr>
     Not done yet. This will be an online interactive` +
-      ` (similar to quizlet live, blooket, kahoot, etc.)
+        ` (similar to quizlet live, blooket, kahoot, etc.)
   `;
-  } else if (isTouching(follower, goon)) {
-    follower.style.backgroundColor = "#bffffc";
-    follower.style.opacity = 1;
-    follower.innerHTML =
-      `Goonter Mode!
+    } else if (isTouching(follower, goon)) {
+      follower.style.backgroundColor = "#bffffc";
+      follower.style.opacity = 1;
+      follower.innerHTML =
+        `Goonter Mode!
     <hr>
     Not done yet. This will be a wordle but for callouts. ` +
-      `The image will slowly fade in parts of the image after each guess. ` +
-      `The goal is to get the callout in like 6 guesses or so.`;
+        `The image will slowly fade in parts of the image after each guess. ` +
+        `The goal is to get the callout in like 6 guesses or so.`;
+    } else {
+      follower.style.opacity = 0;
+    }
   } else {
     follower.style.opacity = 0;
   }
