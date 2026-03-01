@@ -1,0 +1,6 @@
+Callout: bottom main
+ | rickydarick
+Map: /images/club/20260228155425_1.jpg,bottom stairs,bottom main stairs,bottom central stairs,bottom stair
+Quality: fine
+Issue: No details
+Timestamp: 2026-03-01T01:05:12.568Z
