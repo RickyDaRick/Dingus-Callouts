@@ -1,5 +1,0 @@
-Callout:  | rickydarick
-Map: /images/lab/20260127161314_1.jpg,metal desk,default plant,dp
-Quality: fine
-Issue: Make it playable on mobile devices. All you gotta do is shrink the images if on mobile
-Timestamp: 2026-02-24T18:14:07.882Z
