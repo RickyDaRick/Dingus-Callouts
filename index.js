@@ -456,6 +456,8 @@ function handleSlam(e) {
       a.volume = volumeSlider.value * 0.25;
       a.play();
     }
+  } else if (e.target.alt === "bord") {
+    window.location.href = "play.html?map=" + playList + "&mode=" + gamemode;
   }
 }
 lab.addEventListener("mousedown", handleDown);
@@ -615,7 +617,7 @@ function animate() {
     }
   }
   dots.forEach((dot) => {
-    if (dot.radius > 5000000 && backH == false) {
+    if (dot.radius > 1000000 && backH == false) {
       backH = true;
       window.location.reload();
     }
