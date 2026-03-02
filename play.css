@@ -167,7 +167,7 @@ h1 {
     color 0.3s ease;
   z-index: 200;
   background-color: #7655c7;
-  width: clamp(150px, 40%, 550px);
+  width: clamp(150px, 40%, 650px);
   font-size: 20px;
 }
 #report:hover {
