@@ -1,0 +1,5 @@
+Callout: 90 | null
+Map: /images/lab/20260127144511_1.jpg,90 hallway,ninety hallway,cafe hallway,cafeteria hallway,cafe hall,cafeteria hall
+Quality: fine
+Issue: No details
+Timestamp: 2026-03-15T05:41:37.499Z
