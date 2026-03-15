@@ -1,0 +1,5 @@
+Callout: 45 | null
+Map: /images/bank/20260227174120_1.jpg,elbow
+Quality: fine
+Issue: No details
+Timestamp: 2026-03-15T05:39:29.845Z
