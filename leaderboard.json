@@ -54,5 +54,12 @@
     "avatarUrl": "https://cdn.discordapp.com/avatars/1091828911194783865/e5bd562b26a020396c2d1a9d42f423ab.png",
     "mode": "all",
     "time": 50.95500000000215
+  },
+  {
+    "userId": "guest",
+    "username": "Guest",
+    "avatarUrl": null,
+    "mode": "club",
+    "time": 100.32500000000452
   }
 ]
